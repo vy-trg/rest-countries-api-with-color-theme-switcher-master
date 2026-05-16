@@ -22,15 +22,15 @@ if (country) {
       const btn = document.createElement('button');
       btn.classList.add('border-btn');
       btn.textContent = code;
-      btn.addEventListener('click', async () => {
-        const response = await fetch('./data.json');
-        const allCountries = await response.json();
+      btn.addEventListener('click', () => {
+        const cached = localStorage.getItem('allCountries');
+        const allCountries = cached ? JSON.parse(cached) : [];
         const bordered = allCountries.find(c => c.alpha3Code === code);
         if (bordered) {
-          localStorage.setItem('selectedCountry', JSON.stringify(bordered));
-          window.location.reload();
+            localStorage.setItem('selectedCountry', JSON.stringify(bordered));
+            window.location.reload();
         }
-      });
+    });
       borderButtons.appendChild(btn);
     });
   } else {

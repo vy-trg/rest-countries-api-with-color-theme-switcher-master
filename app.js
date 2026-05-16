@@ -11,6 +11,7 @@ async function loadCountries() {
     const response = await fetch('./data.json');
     if (!response.ok) throw new Error('Failed to load data');
     allCountries = await response.json();
+    localStorage.setItem('allCountries', JSON.stringify(allCountries));
     displayCountries(allCountries);
   } catch (error) {
     grid.innerHTML = '<p style="padding: 48px 80px;">Failed to load countries. Please try again.</p>';
