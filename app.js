@@ -7,9 +7,15 @@ let allCountries = [];
 
 // FETCH DATA
 async function loadCountries() {
-  const response = await fetch('./data.json');
-  allCountries = await response.json();
-  displayCountries(allCountries);
+  try {
+    const response = await fetch('./data.json');
+    if (!response.ok) throw new Error('Failed to load data');
+    allCountries = await response.json();
+    displayCountries(allCountries);
+  } catch (error) {
+    grid.innerHTML = '<p style="padding: 48px 80px;">Failed to load countries. Please try again.</p>';
+    console.error(error);
+  }
 }
 
 // DISPLAY CARDS
@@ -49,12 +55,5 @@ function filterCountries() {
   });
   displayCountries(filtered);
 }
-
-// DARK MODE
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  const isDark = document.body.classList.contains('dark');
-  themeToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-});
 
 loadCountries();

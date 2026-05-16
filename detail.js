@@ -1,14 +1,6 @@
-const themeToggle = document.getElementById('theme-toggle');
-
-// DARK MODE
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  const isDark = document.body.classList.contains('dark');
-  themeToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-});
-
 // LOAD COUNTRY DATA
-const country = JSON.parse(localStorage.getItem('selectedCountry'));
+const raw = localStorage.getItem('selectedCountry');
+const country = raw ? JSON.parse(raw) : null;
 
 if (country) {
   document.getElementById('detail-flag').src = country.flag;
