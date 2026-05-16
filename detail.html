@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country Detail</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Where in the world?</h1>
+      <button id="theme-toggle">🌙 Dark Mode</button>
+    </header>
+
+    <main class="detail-main">
+      <button class="back-btn" onclick="history.back()">← Back</button>
+
+      <div class="detail-content">
+        <img id="detail-flag" src="" alt="" />
+
+        <div class="detail-info">
+          <h2 id="detail-name"></h2>
+          <div class="detail-columns">
+            <div class="detail-col">
+              <p><strong>Native Name:</strong> <span id="detail-native"></span></p>
+              <p><strong>Population:</strong> <span id="detail-population"></span></p>
+              <p><strong>Region:</strong> <span id="detail-region"></span></p>
+              <p><strong>Sub Region:</strong> <span id="detail-subregion"></span></p>
+              <p><strong>Capital:</strong> <span id="detail-capital"></span></p>
+            </div>
+            <div class="detail-col">
+              <p><strong>Top Level Domain:</strong> <span id="detail-domain"></span></p>
+              <p><strong>Currencies:</strong> <span id="detail-currencies"></span></p>
+              <p><strong>Languages:</strong> <span id="detail-languages"></span></p>
+            </div>
+          </div>
+
+          <div class="border-countries">
+            <strong>Border Countries:</strong>
+            <div id="border-buttons"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="detail.js"></script>
+  </body>
+</html>
