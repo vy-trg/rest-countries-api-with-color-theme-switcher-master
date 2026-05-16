@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Where in the world?</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
-      <h1>Where in the world?</h1>
-      <button id="theme-toggle">🌙 Dark Mode</button>
+        <h1>Where in the world?</h1>
+        <button id="theme-toggle">🌙 Dark Mode</button>
     </header>
 
     <main>
-      <div class="controls">
-        <div class="search-box">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="search" placeholder="Search for a country..." />
+        <div class="controls">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Search for a country..." />
+            </div>
+            <select id="region-filter">
+                <option value="">Filter by Region</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
         </div>
-        <select id="region-filter">
-          <option value="">Filter by Region</option>
-          <option value="Africa">Africa</option>
-          <option value="Americas">Americas</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-        </select>
-      </div>
 
-      <div class="countries-grid" id="countries-grid"></div>
+        <div class="countries-grid" id="countries-grid"></div>
     </main>
 
     <script src="theme.js"></script>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
