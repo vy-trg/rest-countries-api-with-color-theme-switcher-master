@@ -22,11 +22,15 @@ async function loadCountries() {
 // DISPLAY CARDS
 function displayCountries(countries) {
     grid.innerHTML = '';
-    countries.forEach(country => {
-        const card = document.createElement('div');
+    countries.forEach((country, index) => {
+        // a real link, so keyboard users can Tab to each card and open it with Enter
+        const card = document.createElement('a');
+        card.href = './detail.html';
         card.classList.add('country-card');
+        // only the first row of flags loads straight away; the rest load as you scroll
+        const loading = index < 8 ? 'eager' : 'lazy';
         card.innerHTML = `
-      <img src="${country.flag}" alt="Flag of ${country.name}" />
+      <img src="${country.flag}" alt="Flag of ${country.name}" width="320" height="160" loading="${loading}" decoding="async" />
       <div class="card-info">
         <h2>${country.name}</h2>
         <p><strong>Population:</strong> <span>${country.population.toLocaleString()}</span></p>
@@ -36,7 +40,6 @@ function displayCountries(countries) {
     `;
         card.addEventListener('click', () => {
             localStorage.setItem('selectedCountry', JSON.stringify(country));
-            window.location.href = './detail.html';
         });
         grid.appendChild(card);
     });

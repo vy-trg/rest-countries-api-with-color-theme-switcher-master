@@ -5,6 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Where in the world?</title>
+    <meta name="description" content="Browse every country's flag, population, region and capital — a REST Countries app with light and dark themes." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" media="print" onload="this.media='all'" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -17,10 +21,10 @@
     <main>
         <div class="controls">
             <div class="search-box">
-                <span class="search-icon">🔍</span>
-                <input type="text" id="search" placeholder="Search for a country..." />
+                <span class="search-icon" aria-hidden="true">🔍</span>
+                <input type="search" id="search" placeholder="Search for a country..." aria-label="Search for a country" />
             </div>
-            <select id="region-filter">
+            <select id="region-filter" aria-label="Filter by region">
                 <option value="">Filter by Region</option>
                 <option value="Africa">Africa</option>
                 <option value="Americas">Americas</option>
@@ -33,8 +37,8 @@
         <div class="countries-grid" id="countries-grid"></div>
     </main>
 
-    <script src="theme.js"></script>
-    <script src="app.js"></script>
+    <script defer src="theme.js"></script>
+    <script defer src="app.js"></script>
 </body>
 
 </html>
