@@ -18,10 +18,11 @@
     </header>
 
     <main class="detail-main">
-        <button class="back-btn" onclick="history.back()">← Back</button>
+        <a class="back-btn" href="./">← Back</a>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
 
-        <div class="detail-content">
-            <img id="detail-flag" src="" alt="" />
+        <div class="detail-content" hidden>
+            <img id="detail-flag" alt="" width="560" height="373" />
 
             <div class="detail-info">
                 <h2 id="detail-name"></h2>
@@ -49,6 +50,7 @@
     </main>
 
     <script defer src="theme.js"></script>
+    <script defer src="api.js"></script>
     <script defer src="detail.js"></script>
 </body>
 

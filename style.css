@@ -200,6 +200,12 @@ button:focus-visible {
 #detail-flag {
     width: 45%;
     max-width: 560px;
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+}
+
+.detail-content[hidden] {
+    display: none;
 }
 
 .detail-info {
@@ -274,4 +280,35 @@ button:focus-visible {
         flex-direction: column;
         gap: 0;
     }
+}
+/* links styled as buttons, status messages */
+a.back-btn,
+a.border-btn {
+    display: inline-block;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.status {
+    padding: 0 80px;
+    color: var(--text);
+}
+
+.status:empty {
+    display: none;
+}
+
+.detail-main .status {
+    padding: 24px 0 0;
+}
+
+@media (max-width: 768px) {
+    .status {
+        padding: 0 16px;
+    }
+}
+
+a:focus-visible {
+    outline: 3px solid #2b7de9;
+    outline-offset: 3px;
 }
